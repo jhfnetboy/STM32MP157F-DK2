@@ -69,6 +69,21 @@ graph TB
     class Tests,Scripts,MockTEE tool
 ```
 
+
+----------
+
+## OP-TEE on QEMU on Docker is unstable
+I run my Mac mini m4 in PhD study room, ICDI CMU ,2nd floor 24 hours.
+
+
+But, if the security guard turn off the power, the data in the simulation docker image will restart and loose all data(like private key and key id and more).
+<img src="https://raw.githubusercontent.com/jhfnetboy/MarkDownImg/main/img/202511161428849.png"/>
+<img src="https://raw.githubusercontent.com/jhfnetboy/MarkDownImg/main/img/202511161433599.png"/>
+<img src="https://raw.githubusercontent.com/jhfnetboy/MarkDownImg/main/img/202511161433753.png"/>
+So, we must migrate the dev env to a stable hardware, not a temporary simulatiom on docker, to save all data in a REAL hardware memory.
+We launched this migration project, also, we are seeking funding for this public goods：[AirAccount](https://airaccount.aastar.io), we worked on this project for over 2 years after we launch the [Istanbul hackathon](https://ethglobal.com/showcase/airaccount-swqix) at 2023.
+It is a public goods, the mission is: Accounts for All. :💌
+
 ## Resources
 
 AI
