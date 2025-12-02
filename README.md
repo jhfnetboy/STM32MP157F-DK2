@@ -31,20 +31,38 @@
 
 ### 一分钟上手
 
+#### Mac 用户 (推荐 - 板上直接编译)
+
+```bash
+# 1. 下载官方镜像并烧录到 SD 卡
+# 参考: docs/mac-development-workflow.md
+
+# 2. 连接硬件并启动
+# USB-C 供电 + Mini USB (调试) + 以太网
+
+# 3. SSH/VNC 连接开发板
+ssh root@<board-ip>
+
+# 4. 在开发板上 clone 代码并编译
+git clone https://github.com/AAStarCommunity/AirAccount.git
+cd AirAccount && make
+```
+
+**详细指南**: [Mac 开发工作流完整指南](docs/mac-development-workflow.md)
+
+#### Ubuntu/Debian 用户 (交叉编译)
+
 ```bash
 # 1. 克隆项目
-git clone https://github.com/your-repo/STM32MP157F-DK2.git
+git clone https://github.com/jhfnetboy/STM32MP157F-DK2.git
 cd STM32MP157F-DK2
 
-# 2. 安装开发环境 (Ubuntu/Debian)
+# 2. 安装开发环境
 chmod +x scripts/setup-ubuntu-dev-env.sh
 ./scripts/setup-ubuntu-dev-env.sh
 
-# 3. 连接硬件
+# 3. 连接硬件并开始开发
 # 参考: docs/phase1-hardware-setup.md
-
-# 4. 开始开发
-# 参考: docs/phase1-development-environment.md
 ```
 
 ## 文档导航
@@ -59,8 +77,9 @@ chmod +x scripts/setup-ubuntu-dev-env.sh
 
 | 文档 | 描述 |
 |------|------|
+| [**Mac 开发工作流**](docs/mac-development-workflow.md) | ⭐ **Mac 用户必读** - VNC/SSH 连接,板上编译完整指南 |
 | [**硬件连接指南**](docs/phase1-hardware-setup.md) | 手把手硬件连接,从开箱到首次启动 |
-| [**开发环境配置**](docs/phase1-development-environment.md) | Ubuntu 开发工具链完整安装 |
+| [**开发环境配置**](docs/phase1-development-environment.md) | Ubuntu 交叉编译工具链完整安装 |
 | [**OP-TEE 开发指南**](docs/phase1-optee-setup.md) | OP-TEE 编译、部署和 TA 开发 |
 
 **核心交付物**:
@@ -264,10 +283,21 @@ MIT License - 查看 [LICENSE](LICENSE) 文件
 - [OP-TEE GitHub](https://github.com/OP-TEE)
 - [GlobalPlatform TEE 规范](https://globalplatform.org/)
 
-### 社区教程
+### 社区教程和视频
 
-- [B站视频教程](https://www.bilibili.com/video/BV111y8BuELC/)
+- [STM32MP1 AI 应用视频教程](https://www.bilibili.com/video/BV111y8BuELC/)
 - [ST 官方 B站频道](https://space.bilibili.com/2100019006)
+
+### 开发工具下载
+
+- [STM32CubeProgrammer](https://www.st.com/en/development-tools/stm32cubeprog.html) - 烧录工具
+- [ST 中国资源中心](https://www.stmcu.com.cn/Designresource/list/STM32%20MCU/firmware_software/software)
+
+### 技术论坛
+
+- [ST 国际社区](https://community.st.com/s/)
+- [ST 中国论坛](https://shequ.stmicroelectronics.cn/thread-636531-1-1.html)
+- [OP-TEE Discussions](https://github.com/OP-TEE/optee_os/discussions)
 
 ---
 
