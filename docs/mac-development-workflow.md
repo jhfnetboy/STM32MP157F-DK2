@@ -150,7 +150,7 @@ diskutil eject /dev/disk2
 
 ### 2.1 连接顺序 (重要!)
 
-<img src="https://wiki.st.com/stm32mpu/nsfr_img_auth.php/thumb/8/82/STM32MP157C-DK2_with_power_stlink_flasher_ethernet.png/1200px-STM32MP157C-DK2_with_power_stlink_flasher_ethernet.png" />
+<img src="https://raw.githubusercontent.com/jhfnetboy/MarkDownImg/main/img/202512021720093.png"/>
 
 ```bash
 # 按以下顺序连接:
