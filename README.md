@@ -49,6 +49,7 @@ cd AirAccount && make
 ```
 
 **详细指南**: [Mac 开发工作流完整指南](docs/mac-development-workflow.md)
+**Mac 只有 Type-C?** [Type-C Only Mac 连接方案](docs/connection-guide-typec-only-mac.md)
 **连接问题?** [Mac 连接故障排查](docs/troubleshooting-mac-connection.md)
 
 #### Ubuntu/Debian 用户 (交叉编译)
@@ -79,6 +80,8 @@ chmod +x scripts/setup-ubuntu-dev-env.sh
 | 文档 | 描述 |
 |------|------|
 | [**Mac 开发工作流**](docs/mac-development-workflow.md) | ⭐ **Mac 用户必读** - VNC/SSH 连接,板上编译完整指南 |
+| [**USB 键盘快速上手**](docs/quick-start-with-usb-keyboard.md) | 🎹 **最快方案** - 借个键盘,5 分钟配置 WiFi 开始开发 |
+| [**Type-C Only Mac**](docs/connection-guide-typec-only-mac.md) | 💻 Mac 只有 Type-C 口? 3 种连接方案详解 |
 | [**Mac 连接故障排查**](docs/troubleshooting-mac-connection.md) | 🔧 ST-LINK 未识别? WiFi 配置? 网络问题解决方案 |
 | [**硬件连接指南**](docs/phase1-hardware-setup.md) | 手把手硬件连接,从开箱到首次启动 |
 | [**开发环境配置**](docs/phase1-development-environment.md) | Ubuntu 交叉编译工具链完整安装 |
