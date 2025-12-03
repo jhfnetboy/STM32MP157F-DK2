@@ -1,5 +1,10 @@
 # Phase 1: Ubuntu/Debian 开发环境配置
 
+> 📖 **中文用户快速导航** | **Quick Navigation for Chinese Users**
+> - [🎹 USB 键盘快速上手](quick-start-with-usb-keyboard.md) | [📱 Mac 开发工作流](mac-development-workflow.md) | [🔧 故障排查](troubleshooting-mac-connection.md)
+> - [🔌 硬件设置](phase1-hardware-setup.md) | [🔐 OP-TEE 开发](phase1-optee-setup.md) | [🏭 工业硬件](phase2-industrial-hardware.md)
+> - [🏠 返回主页](../README.md) | [📚 所有文档](../docs/)
+
 ## 概述
 
 本文档详细说明如何在 Ubuntu/Debian 系统上搭建 STM32MP157F-DK2 的完整开发环境,包括交叉编译工具链、SDK、调试工具等。

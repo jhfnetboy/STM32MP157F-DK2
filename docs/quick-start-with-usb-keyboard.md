@@ -1,6 +1,11 @@
 # USB Keyboard Quick Start Guide
 # USB 键盘快速上手指南
 
+> 📖 **中文用户快速导航** | **Quick Navigation for Chinese Users**
+> - [📱 Mac 开发工作流](mac-development-workflow.md) | [🔧 故障排查](troubleshooting-mac-connection.md) | [💻 Type-C Mac 方案](connection-guide-typec-only-mac.md)
+> - [🔌 硬件设置](phase1-hardware-setup.md) | [🛠️ 开发环境](phase1-development-environment.md) | [🔐 OP-TEE 开发](phase1-optee-setup.md)
+> - [🏠 返回主页](../README.md) | [📚 所有文档](../docs/)
+
 **Applicable**: You have a USB keyboard and LCD shows ST graphical interface
 **适用**: 已借到 USB 键盘,LCD 显示 ST 图形界面
 

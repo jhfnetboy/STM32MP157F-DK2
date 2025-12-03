@@ -1,5 +1,10 @@
 # Phase 2: 工业级硬件选型对比
 
+> 📖 **中文用户快速导航** | **Quick Navigation for Chinese Users**
+> - [🎹 USB 键盘快速上手](quick-start-with-usb-keyboard.md) | [📱 Mac 开发工作流](mac-development-workflow.md) | [🔧 故障排查](troubleshooting-mac-connection.md)
+> - [🔌 硬件设置](phase1-hardware-setup.md) | [🛠️ 开发环境](phase1-development-environment.md) | [🔐 OP-TEE 开发](phase1-optee-setup.md)
+> - [🌐 去中心化架构](phase3-architecture.md) | [🏠 返回主页](../README.md) | [📚 所有文档](../docs/)
+
 ## 概述
 
 本文档对比适用于去中心化 KMS 部署的工业级嵌入式硬件平台,重点关注 TEE 支持、成本效益和社区部署可行性。

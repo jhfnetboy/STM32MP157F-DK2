@@ -1,5 +1,10 @@
 # Mac 连接 STM32MP157F-DK2 故障排查指南
 
+> 📖 **中文用户快速导航** | **Quick Navigation for Chinese Users**
+> - [🎹 USB 键盘快速上手](quick-start-with-usb-keyboard.md) | [📱 Mac 开发工作流](mac-development-workflow.md) | [💻 Type-C Mac 方案](connection-guide-typec-only-mac.md)
+> - [🔌 硬件设置](phase1-hardware-setup.md) | [🛠️ 开发环境](phase1-development-environment.md) | [🔐 OP-TEE 开发](phase1-optee-setup.md)
+> - [🏠 返回主页](../README.md) | [📚 所有文档](../docs/)
+
 ## 问题: ST-LINK 串口设备未检测到
 
 ### 症状

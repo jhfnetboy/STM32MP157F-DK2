@@ -1,5 +1,10 @@
 # Mac 开发工作流完整指南
 
+> 📖 **中文用户快速导航** | **Quick Navigation for Chinese Users**
+> - [🎹 USB 键盘快速上手](quick-start-with-usb-keyboard.md) | [🔧 故障排查](troubleshooting-mac-connection.md) | [💻 Type-C Mac 方案](connection-guide-typec-only-mac.md)
+> - [🔌 硬件设置](phase1-hardware-setup.md) | [🛠️ 开发环境](phase1-development-environment.md) | [🔐 OP-TEE 开发](phase1-optee-setup.md)
+> - [🏠 返回主页](../README.md) | [📚 所有文档](../docs/)
+
 ## 概述
 
 本文档专门针对 **Mac 用户** 在 STM32MP157F-DK2 上进行 KMS 开发的完整工作流,采用 **在开发板上直接编译** 的方式,避免复杂的交叉编译环境配置。

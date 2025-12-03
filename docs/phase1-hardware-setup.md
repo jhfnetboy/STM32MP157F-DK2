@@ -1,5 +1,10 @@
 # Phase 1: STM32MP157F-DK2 硬件连接完全指南
 
+> 📖 **中文用户快速导航** | **Quick Navigation for Chinese Users**
+> - [🎹 USB 键盘快速上手](quick-start-with-usb-keyboard.md) | [📱 Mac 开发工作流](mac-development-workflow.md) | [🔧 故障排查](troubleshooting-mac-connection.md)
+> - [💻 Type-C Mac 方案](connection-guide-typec-only-mac.md) | [🛠️ 开发环境](phase1-development-environment.md) | [🔐 OP-TEE 开发](phase1-optee-setup.md)
+> - [🏠 返回主页](../README.md) | [📚 所有文档](../docs/)
+
 ## 概述
 
 本文档提供 STM32MP157F-DK2 开发板从开箱到首次启动的完整硬件连接指南,适合完全没有 STM32 经验的开发者。

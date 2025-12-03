@@ -1,5 +1,10 @@
 # Phase 3: 去中心化 KMS 架构设计
 
+> 📖 **中文用户快速导航** | **Quick Navigation for Chinese Users**
+> - [🎹 USB 键盘快速上手](quick-start-with-usb-keyboard.md) | [📱 Mac 开发工作流](mac-development-workflow.md) | [🔧 故障排查](troubleshooting-mac-connection.md)
+> - [🔌 硬件设置](phase1-hardware-setup.md) | [🛠️ 开发环境](phase1-development-environment.md) | [🔐 OP-TEE 开发](phase1-optee-setup.md)
+> - [🏭 工业硬件](phase2-industrial-hardware.md) | [🏠 返回主页](../README.md) | [📚 所有文档](../docs/)
+
 ## 概述
 
 本文档设计适用于清迈社区实验的去中心化密钥管理系统 (KMS) 架构,目标是 3-5 节点,实现技术验证、社区运营和经济模型测试。
