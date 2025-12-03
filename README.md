@@ -1,3 +1,315 @@
+# STM32MP157F-DK2 Development Project
+
+AirAccount TMS (Trusted Management Service) hardware TEE implementation based on STM32MP157F-DK2 board.
+
+**Mission**: Accounts for All
+
+## Project Overview
+
+This project aims to migrate AirAccount KMS from unstable Docker/QEMU OP-TEE environment to real hardware platform, ultimately achieving a decentralized key management system.
+
+<a href="https://wiki.st.com/stm32mpu/wiki/Getting_started/STM32MP1_boards/STM32MP157x-DK2" > <img src="https://raw.githubusercontent.com/jhfnetboy/MarkDownImg/main/img/202511161401453.png" align="left" width="300"/> </a>
+
+**Key Features**:
+- OP-TEE secure environment based on ARM TrustZone
+- Secure key storage on real hardware
+- Data persistence after power loss
+- Decentralized node deployment
+
+<br clear="left"/>
+
+Related Projects: [AirAccount KMS](https://github.com/AAStarCommunity/AirAccount/tree/KMS) | [Istanbul Hackathon](https://ethglobal.com/showcase/airaccount-swqix)
+
+## Quick Start
+
+### Prerequisites
+
+- STM32MP157F-DK2 development board
+- Ubuntu 20.04+ / Debian 11+
+- 8GB+ RAM
+- 50GB+ disk space
+
+### One Minute Setup
+
+#### Mac Users (Recommended - On-board Compilation)
+
+```bash
+# 1. Download official image and flash to SD card
+# Reference: docs/mac-development-workflow.md
+
+# 2. Connect hardware and boot
+# USB-C power + Mini USB (debug) + Ethernet
+
+# 3. SSH/VNC to board
+ssh root@<board-ip>
+
+# 4. Clone code and compile on board
+git clone https://github.com/AAStarCommunity/AirAccount.git
+cd AirAccount && make
+```
+
+**Detailed Guide**: [Mac Development Workflow](docs/mac-development-workflow.md)
+**Mac with Type-C Only?** [Type-C Only Mac Connection Guide](docs/connection-guide-typec-only-mac.md)
+**Connection Issues?** [Mac Troubleshooting Guide](docs/troubleshooting-mac-connection.md)
+
+#### Ubuntu/Debian Users (Cross-compilation)
+
+```bash
+# 1. Clone project
+git clone https://github.com/jhfnetboy/STM32MP157F-DK2.git
+cd STM32MP157F-DK2
+
+# 2. Install development environment
+chmod +x scripts/setup-ubuntu-dev-env.sh
+./scripts/setup-ubuntu-dev-env.sh
+
+# 3. Connect hardware and start development
+# Reference: docs/phase1-hardware-setup.md
+```
+
+## Documentation
+
+### 📚 Complete Documentation
+
+Check [**docs/**](docs/) directory for all documentation.
+
+### 🚀 Phase 1: Hardware Migration and OP-TEE Verification
+
+**Goal**: Migrate KMS from Docker/QEMU to STM32MP157F-DK2 real hardware
+
+| Document | Description |
+|----------|-------------|
+| [**Mac Development Workflow**](docs/mac-development-workflow.md) | ⭐ **Must-read for Mac users** - VNC/SSH connection, on-board compilation guide |
+| [**USB Keyboard Quick Start**](docs/quick-start-with-usb-keyboard.md) | 🎹 **Fastest method** - Borrow a keyboard, configure WiFi in 5 minutes |
+| [**Type-C Only Mac**](docs/connection-guide-typec-only-mac.md) | 💻 Mac with only Type-C ports? 3 connection solutions explained |
+| [**Mac Troubleshooting**](docs/troubleshooting-mac-connection.md) | 🔧 ST-LINK not recognized? WiFi config? Network troubleshooting |
+| [**Hardware Setup Guide**](docs/phase1-hardware-setup.md) | Step-by-step hardware connection from unboxing to first boot |
+| [**Development Environment**](docs/phase1-development-environment.md) | Ubuntu cross-compilation toolchain complete setup |
+| [**OP-TEE Development Guide**](docs/phase1-optee-setup.md) | OP-TEE compilation, deployment and TA development |
+
+**Core Deliverables**:
+- ✅ Stable running hardware platform
+- ✅ Complete development environment
+- ✅ Fully functional KMS TA
+- ✅ Performance and stability verification
+
+### 🏭 Phase 2: Industrialization and Single-Node Deployment
+
+**Goal**: Transition from dev board to industrial-grade hardware for production deployment
+
+| Document | Description |
+|----------|-------------|
+| [**Industrial Hardware Comparison**](docs/phase2-industrial-hardware.md) | Detailed industrial-grade hardware comparison (<$500/node) |
+| Single-Node Deployment Guide | Complete production environment single-node deployment *(Coming)* |
+
+**Core Deliverables**:
+- Industrial-grade hardware selection and procurement
+- Single-node production environment
+- Complete monitoring and backup
+- Community-followable deployment guide
+
+### 🌐 Phase 3: Chiang Mai Community Decentralization Experiment
+
+**Goal**: Deploy 3-5 nodes decentralized KMS in Chiang Mai, verify technical and economic models
+
+| Document | Description |
+|----------|-------------|
+| [**Decentralization Architecture**](docs/phase3-architecture.md) | Multi-node KMS architecture, key sharding, data synchronization |
+| Community Governance Model | Node incentives, community voting, token economics *(Coming)* |
+| Chiang Mai Experiment Plan | Specific implementation steps and evaluation metrics *(Coming)* |
+
+**Core Deliverables**:
+- 3-5 nodes deployed in Chiang Mai
+- Decentralized architecture verification
+- Community governance and incentive mechanisms
+- Real user adoption and feedback
+
+### 🗺️ Project Roadmap
+
+See [**ROADMAP.md**](ROADMAP.md) for complete three-phase plan, timeline and resource requirements.
+
+### 🔧 Automation Tools
+
+| Script | Purpose |
+|--------|---------|
+| [setup-ubuntu-dev-env.sh](scripts/setup-ubuntu-dev-env.sh) | Ubuntu development environment one-click installation |
+| build-optee.sh | OP-TEE automatic compilation *(Coming)* |
+| flash-sd-card.sh | SD card flashing assistant *(Coming)* |
+| verify-tee.sh | TEE environment automatic verification *(Coming)* |
+
+```mermaid
+graph TB
+    subgraph "Client Layer"
+        CLI[CLI Tools]
+        WebApp[Web Applications]
+        SDK[Language SDKs]
+    end
+
+    subgraph "API Gateway"
+        CF[Cloudflare Tunnel<br/>HTTPS Proxy]
+        LB[Load Balancer<br/>Rate Limiting]
+    end
+
+    subgraph "KMS Service Layer"
+        API[KMS API Server<br/>:8080<br/>AWS Compatible]
+        Health[Health Monitor<br/>Service Status]
+    end
+
+    subgraph "Core Logic Layer"
+        Core[KMS Core<br/>Cryptographic Logic]
+        Proto[Protocol Definitions<br/>TEE Communication]
+    end
+
+    subgraph "TEE Layer (Secure)"
+        Host[KMS Host<br/>TEE Interface]
+        TA[Trusted Application<br/>Key Operations]
+        Storage[Secure Storage<br/>Private Keys]
+    end
+
+    subgraph "Testing & Tools"
+        MockTEE[Mock TEE<br/>Development]
+        Tests[Test Suite<br/>API Validation]
+        Scripts[Deployment Scripts<br/>Automation]
+    end
+
+    %% Connections
+    CLI --> CF
+    WebApp --> CF
+    SDK --> CF
+    CF --> LB
+    LB --> API
+    API --> Health
+    API --> Core
+    Core --> Proto
+    Proto --> Host
+    Host --> TA
+    TA --> Storage
+
+    %% Development connections
+    Core -.-> MockTEE
+    Tests -.-> API
+    Scripts -.-> API
+
+    %% Styling
+    classDef secure fill:#ff6b6b,stroke:#333,stroke-width:3px
+    classDef api fill:#4ecdc4,stroke:#333,stroke-width:2px
+    classDef tool fill:#45b7d1,stroke:#333,stroke-width:1px
+
+    class TA,Storage,Host secure
+    class API,CF,LB api
+    class Tests,Scripts,MockTEE tool
+```
+
+## Why Hardware Migration?
+
+### Problem: OP-TEE on QEMU on Docker is Unstable
+
+When running Docker/QEMU simulation environment on Mac mini M4 at CMU ICDI, we encountered serious issues:
+
+**Key Pain Points**:
+- Data loss after power failure (private keys, Key IDs and other sensitive data)
+- Unreliable simulation environment
+- Cannot run 24/7 stably
+
+<details>
+<summary>View problem screenshots</summary>
+
+<img src="https://raw.githubusercontent.com/jhfnetboy/MarkDownImg/main/img/202511161428849.png" width="600"/>
+<img src="https://raw.githubusercontent.com/jhfnetboy/MarkDownImg/main/img/202511161433599.png" width="600"/>
+<img src="https://raw.githubusercontent.com/jhfnetboy/MarkDownImg/main/img/202511161433753.png" width="600"/>
+
+</details>
+
+### Solution: Real Hardware TEE
+
+Migrate to STM32MP157F-DK2 real hardware platform:
+- ✅ Persistent storage (eMMC/RPMB)
+- ✅ No data loss after power failure
+- ✅ Industrial-grade stability
+- ✅ Support decentralized deployment
+
+## Contributing
+
+We welcome community contributions! Check [Contributing Guidelines](CONTRIBUTING.md) (Coming)
+
+**Contribution Areas**:
+- 📝 Improve documentation and translation
+- 🐛 Report and fix bugs
+- ✨ Propose new features
+- 🧪 Write test cases
+- 🌐 Participate in community node operations (Phase 3)
+
+## Funding Support
+
+AirAccount is a Public Goods project, we are seeking grants:
+
+- [Gitcoin Grants](https://gitcoin.co/)
+- [Ethereum Foundation Grants](https://esp.ethereum.foundation/)
+- [Web3 Foundation Grants](https://web3.foundation/grants/)
+
+If you'd like to support, contact us: [airaccount.aastar.io](https://airaccount.aastar.io)
+
+## Community and Contact
+
+- 🌐 **Website**: [airaccount.aastar.io](https://airaccount.aastar.io)
+- 💬 **Discord**: (Coming)
+- 🐦 **Twitter**: (Coming)
+- 📧 **Email**: (Coming)
+
+## License
+
+MIT License - See [LICENSE](LICENSE) file
+
+## Acknowledgements
+
+Thanks to the following projects and organizations:
+
+- [OP-TEE](https://www.op-tee.org/) - Open source TEE implementation
+- [STMicroelectronics](https://www.st.com/) - STM32MP1 platform support
+- [ETHGlobal](https://ethglobal.com/) - Istanbul Hackathon support
+- CMU ICDI - Research venue support
+- Chiang Mai developer community
+
+## Reference Resources
+
+### STM32MP1 Official Resources
+
+- [STM32MP157F-DK2 Product Page](https://www.st.com/en/evaluation-tools/stm32mp157f-dk2.html)
+- [STM32MPU Wiki](https://wiki.st.com/stm32mpu)
+  - [Hardware Description](https://wiki.st.com/stm32mpu/wiki/STM32MP157x-DKx_-_hardware_description)
+  - [Getting Started Guide](https://wiki.st.com/stm32mpu/wiki/Getting_started/STM32MP1_boards/STM32MP157x-DK2)
+- [ST Official Forum](https://community.st.com/s/)
+- [ST China Community](https://shequ.stmicroelectronics.cn/)
+
+### OP-TEE Resources
+
+- [OP-TEE Official Documentation](https://optee.readthedocs.io/)
+- [OP-TEE GitHub](https://github.com/OP-TEE)
+- [GlobalPlatform TEE Specification](https://globalplatform.org/)
+
+### Community Tutorials and Videos
+
+- [STM32MP1 AI Application Video Tutorial](https://www.bilibili.com/video/BV111y8BuELC/)
+- [ST Official Bilibili Channel](https://space.bilibili.com/2100019006)
+
+### Development Tools Downloads
+
+- [STM32CubeProgrammer](https://www.st.com/en/development-tools/stm32cubeprog.html) - Flashing tool
+- [ST China Resource Center](https://www.stmcu.com.cn/Designresource/list/STM32%20MCU/firmware_software/software)
+
+### Technical Forums
+
+- [ST International Community](https://community.st.com/s/)
+- [ST China Forum](https://shequ.stmicroelectronics.cn/thread-636531-1-1.html)
+- [OP-TEE Discussions](https://github.com/OP-TEE/optee_os/discussions)
+
+---
+
+**Built with ❤️ for "Accounts for All"**
+
+---
+---
+
 # STM32MP157F-DK2 开发项目
 
 基于 STM32MP157F-DK2 开发板的 AirAccount TMS (Trusted Management Service) 硬件 TEE 实现。
@@ -67,11 +379,10 @@ chmod +x scripts/setup-ubuntu-dev-env.sh
 # 参考: docs/phase1-hardware-setup.md
 ```
 
-## 文档导航 / Documentation
+## 文档导航
 
-### 📚 Complete Documentation / 完整文档
+### 📚 完整文档
 
-Check [**docs/**](docs/) directory for all documentation.
 查看 [**docs/**](docs/) 目录获取所有文档。
 
 ### 🚀 Phase 1: 硬件迁移和 OP-TEE 验证
@@ -137,70 +448,6 @@ Check [**docs/**](docs/) directory for all documentation.
 | build-optee.sh | OP-TEE 自动编译 *(待完成)* |
 | flash-sd-card.sh | SD 卡烧录辅助 *(待完成)* |
 | verify-tee.sh | TEE 环境自动验证 *(待完成)* |
-
-```mermaid
-graph TB
-    subgraph "Client Layer"
-        CLI[CLI Tools]
-        WebApp[Web Applications]
-        SDK[Language SDKs]
-    end
-
-    subgraph "API Gateway"
-        CF[Cloudflare Tunnel<br/>HTTPS Proxy]
-        LB[Load Balancer<br/>Rate Limiting]
-    end
-
-    subgraph "KMS Service Layer"
-        API[KMS API Server<br/>:8080<br/>AWS Compatible]
-        Health[Health Monitor<br/>Service Status]
-    end
-
-    subgraph "Core Logic Layer"
-        Core[KMS Core<br/>Cryptographic Logic]
-        Proto[Protocol Definitions<br/>TEE Communication]
-    end
-
-    subgraph "TEE Layer (Secure)"
-        Host[KMS Host<br/>TEE Interface]
-        TA[Trusted Application<br/>Key Operations]
-        Storage[Secure Storage<br/>Private Keys]
-    end
-
-    subgraph "Testing & Tools"
-        MockTEE[Mock TEE<br/>Development]
-        Tests[Test Suite<br/>API Validation]
-        Scripts[Deployment Scripts<br/>Automation]
-    end
-
-    %% Connections
-    CLI --> CF
-    WebApp --> CF
-    SDK --> CF
-    CF --> LB
-    LB --> API
-    API --> Health
-    API --> Core
-    Core --> Proto
-    Proto --> Host
-    Host --> TA
-    TA --> Storage
-
-    %% Development connections
-    Core -.-> MockTEE
-    Tests -.-> API
-    Scripts -.-> API
-
-    %% Styling
-    classDef secure fill:#ff6b6b,stroke:#333,stroke-width:3px
-    classDef api fill:#4ecdc4,stroke:#333,stroke-width:2px
-    classDef tool fill:#45b7d1,stroke:#333,stroke-width:1px
-
-    class TA,Storage,Host secure
-    class API,CF,LB api
-    class Tests,Scripts,MockTEE tool
-```
-
 
 ## 为什么要硬件迁移?
 
@@ -308,4 +555,3 @@ MIT License - 查看 [LICENSE](LICENSE) 文件
 ---
 
 **Built with ❤️ for "Accounts for All"**
-
