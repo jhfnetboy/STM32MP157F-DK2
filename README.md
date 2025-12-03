@@ -1,5 +1,7 @@
 # STM32MP157F-DK2 Development Project
 
+> **[🇨🇳 跳转到中文版本 / Jump to Chinese Version](#stm32mp157f-dk2-开发项目)**
+
 AirAccount TMS (Trusted Management Service) hardware TEE implementation based on STM32MP157F-DK2 board.
 
 **Mission**: Accounts for All
@@ -311,6 +313,8 @@ Thanks to the following projects and organizations:
 ---
 
 # STM32MP157F-DK2 开发项目
+
+> **[🇬🇧 Jump to English Version / 跳转到英文版本](#stm32mp157f-dk2-development-project)**
 
 基于 STM32MP157F-DK2 开发板的 AirAccount TMS (Trusted Management Service) 硬件 TEE 实现。
 
