@@ -69,12 +69,10 @@ chmod +x scripts/setup-ubuntu-dev-env.sh
 
 ## 文档导航 / Documentation
 
-### 📚 完整文档 / Complete Documentation
+### 📚 Complete Documentation / 完整文档
 
-**📖 [Documentation Index / 文档索引](docs/README.md)** - ⭐ Start here! / 从这里开始!
-
+Check [**docs/**](docs/) directory for all documentation.
 查看 [**docs/**](docs/) 目录获取所有文档。
-See [**docs/**](docs/) directory for all documentation.
 
 ### 🚀 Phase 1: 硬件迁移和 OP-TEE 验证
 
